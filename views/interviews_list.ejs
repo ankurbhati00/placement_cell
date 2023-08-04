@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/interviews_list.css">
+    </head>
+    <body>
+        <table border="2">
+            <tr>
+                <th>No.</th>
+                <th>Company</th>
+                <td>Date</td>
+            </tr>
+            <% let size=1; %>
+                <% for(interview of interviews){ %>
+                    <% let date=new Date(interview.date).toDateString(); %>
+                        <tr>
+                            <td>
+                                <%= size++ %>
+                            </td>
+                            <td><a href="/interview/students-list/<%=interview._id%>">
+                                    <%= interview.company %>
+                                </a> </td>
+                            <td>
+                                <%= date %>
+                            </td>
+                        </tr>
+                        <%}%>
+        </table>
+    </body>
+    <script src="/js/interviews_list.js"></script>
+</html>
+
+

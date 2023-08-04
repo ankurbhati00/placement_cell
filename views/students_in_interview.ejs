@@ -1,0 +1,34 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="/css/students_in_interview.css">
+    </head>
+    <body>
+        <table id="student-interview" border="3">
+            <tr>
+                <th colspan="5">Company: &nbsp;<%=interviews.company%>
+                </th>
+            </tr>
+        
+            <tr>
+                <% for(student of interviews.student){ %>
+            <tr>
+                <td>
+                    <%= student.name %>
+                </td>
+                <td>
+                    <%= student.college %>
+                </td>
+                <td>
+                    <%= student.email %>
+                </td>
+                <td id="placement-status">
+                    <%= student.placement_status %>
+                </td>
+            </tr>
+            <% } %>
+                </tr>
+        
+        </table>
+    </body>
+    <script src="/js/students_in_interview.js"></script>
+</html>

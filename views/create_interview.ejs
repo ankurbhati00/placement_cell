@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/create_interview.css">
+    </head>
+    <body>
+        <form action="/interview/create" method="post">
+            <div>Company: <input type="text" name="company" id="company" required></div>
+            <div>Date: <input type="date" name="date" id="date" required></div>
+            <strong id="select-students">Select students</strong>
+            <% for(student of students){ %>
+                <div><input type="checkbox" name="emails" id="checkbox" value="<%= student.email %>">
+                    <%= student.email %>
+                </div>
+                <% } %>
+                <input type="submit" value="Create Interview">
+        </form>
+    </body>
+    <script src="/js/create_interview.js"></script>
+</html>
+
