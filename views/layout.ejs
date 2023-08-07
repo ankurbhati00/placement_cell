@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/51457f5ad9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/layout.css">
 </head>
 <body>
 
     <header>
-      <h2>Placement CELL</h2>
-      <div id="signin-signup">
-        
-        <a href="http://" class="signIn-signUp">Sign-In</a>
-        <a href="http://" class="signIn-signUp">Sign-Up</a>
-      </div>
-
+      <h2 id="header-text">Placement Cell</h2>
+        <a href="" id="logout">Log Out</a>
     </header>
     <main>
 
         <div id="interview-student-toggle">
             <a href="/" class="dynamic-button" id="students">Students</a>
             <a href="/interview"  class="dynamic-button" id="interviews">Interviews</a>
-            <a href="/student/create"  class="dynamic-button" id="add-student">Add Student</a>
-            <a href="/interview/create"  class="dynamic-button" id="create-interview">Create Interview</a>
+            <a href="/student/create"  class="dynamic-button" id="add-student">Add Student <i class="fa-sharp fa-regular fa-plus"></i></a>
+            <a href="/interview/create"  class="dynamic-button" id="create-interview">Create Interview <i class="fa-sharp fa-regular fa-plus"></i></a>
         </div>
             <%- body %>
        

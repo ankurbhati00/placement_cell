@@ -71,5 +71,59 @@ module.exports.studentsInIntervew = async (req, res) => {
   return res.render('students_in_interview', {
 
     interviews: interview
+
   });
 };
+//send the interview result to student db and response to back
+module.exports.interviewResult = async (req, res) => {
+  
+  let result = req.query.result;
+  //beautyfye the result value to store in db
+  switch (true) {
+    case (result == 'pass'): result = 'Pass'
+      break;
+    case (result == 'fail'): result = 'Fail'
+      break;
+    case (result == 'onhold'): result = 'On Hold'
+      break;
+    case (result == 'didnotattempt'): result = "Didn't Attempt"
+      break;
+    default:result = 'None'
+  }
+
+  await Student.findById(req.params.student_id)
+    .then((student) => {
+      if (student) {
+
+        //check if this interview is already present in data base or not
+        for (let i of student.interview_result) {
+          if (i.interview._id == req.query.interview_id) {
+            student.interview_result.pull(i);
+            break;
+          }
+        }
+        //if interview not present then create new
+          student.interview_result.push({
+            interview: req.query.interview_id,
+            result: result,
+          });
+        student.save();
+
+        return res.json('200', {
+          data: result,
+          message: 'request successful'
+        });
+      }
+      //if student not found 
+      return res.json('404', {
+        message: 'Student not found in db'
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      return res.json('500',{
+        message:'Internal Server Error'
+      })
+    });
+}
+

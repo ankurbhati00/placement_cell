@@ -1,36 +1,58 @@
-<table border="2">
-    <tr>
-        <th rowspan="2">No.</th>
-        <th rowspan="2">Name</th>
-        <th rowspan="2">College</th>
-        <th rowspan="2"> Email </th>
-        <th colspan="3">Course scores</th>
-        <th rowspan="2">Status</th>
-        
-        
-    </tr>
-    
-    <tr>
-        
-        
-        <td>DSA</td>
-        <td>WebD</td>
-        <td>React</td>
-       
-    </tr>
-    <% let size =1; %>
-    <% for(student of students){ %>
-            <tr>
-                <td><%= size++ %></td>
-                <td><%= student.name %></td>
-                <td><%= student.college %></td>
-                <td><%= student.email %></td>
-                <td><%= student.dsa_score %></td>
-                <td><%= student.Webd_score %></td>
-                <td><%= student.react_score %></td>
-                <td><%= student.placement_status %></td>
-            </tr>
-        <% } %>
+<html>
 
+<head>
+    <link rel="stylesheet" href="/css/students_list.css">
+</head>
+<body>
+    <div id="student-table">
+
+    <table border="1">
+        <tr>
+            <th rowspan="2">No.</th>
+            <th rowspan="2">Name</th>
+            <th rowspan="2">College</th>
+            <th rowspan="2"> Email </th>
+            <th colspan="3">Course scores</th>
+            <th rowspan="2">Status</th>
+        </tr>
     
-</table>
+        <tr>
+            <td class="th">DSA</td>
+            <td class="th">WebD</td>
+            <td class="th">React</td>
+        </tr>
+
+        <% let size=1; %>
+            <% for(student of students){ %>
+                <tr>
+                    <td>
+                        <%= size++ %>
+                    </td>
+                    <td>
+                        <%= student.name %>
+                    </td>
+                    <td>
+                        <%= student.college %>
+                    </td>
+                    <td>
+                        <%= student.email %>
+                    </td>
+                    <td>
+                        <%= student.dsa_score %>
+                    </td>
+                    <td>
+                        <%= student.Webd_score %>
+                    </td>
+                    <td>
+                        <%= student.react_score %>
+                    </td>
+                    <td>
+                        <%= student.placement_status %>
+                    </td>
+                </tr>
+                <% } %>
+    </table>
+    </div>
+</body>
+
+</html>

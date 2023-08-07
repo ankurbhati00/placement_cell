@@ -3,11 +3,13 @@
         <link rel="stylesheet" href="/css/interviews_list.css">
     </head>
     <body>
+        <div id="interviews-table">
+
         <table border="2">
             <tr>
                 <th>No.</th>
                 <th>Company</th>
-                <td>Date</td>
+                <th>Date</th>
             </tr>
             <% let size=1; %>
                 <% for(interview of interviews){ %>
@@ -25,6 +27,7 @@
                         </tr>
                         <%}%>
         </table>
+        </div>
     </body>
     <script src="/js/interviews_list.js"></script>
 </html>

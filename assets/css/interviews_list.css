@@ -1,0 +1,38 @@
+#interviews-table {
+    display: inline-block;
+    height: 600px;
+    width: fit-content;
+    background-color: rgb(199, 179, 141);
+    border: 2px solid black;
+    border-radius: 2px;
+    overflow-y: scroll;
+}
+
+#interviews-table::-webkit-scrollbar {
+    display: none;
+}
+
+table {
+    width: 1000px;
+    padding: 5px;
+    border: none;
+    border-color: black;
+}
+
+th{
+    background-color: rgb(98, 178, 98);
+}
+
+td>a{
+    display: inline-block;
+    width: 99%;
+    text-decoration: none;
+    color:black;
+    text-transform: capitalize;
+    padding-left: 1%;
+}
+
+td>a:hover{
+    background-color:rgb(106, 149, 106);
+    color: rgb(239, 227, 227);
+}

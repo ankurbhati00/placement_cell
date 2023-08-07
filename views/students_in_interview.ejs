@@ -1,12 +1,14 @@
 <html>
     <head>
     <link rel="stylesheet" href="/css/students_in_interview.css">
+    
     </head>
     <body>
-        <table id="student-interview" border="3">
+        <div id="student-interview">
+        <table  border="3">
             <tr>
-                <th colspan="5">Company: &nbsp;<%=interviews.company%>
-                </th>
+                <th colspan="3">Company: &nbsp;<%=interviews.company%></th>
+                <th>Result</th>
             </tr>
         
             <tr>
@@ -21,14 +23,35 @@
                 <td>
                     <%= student.email %>
                 </td>
-                <td id="placement-status">
-                    <%= student.placement_status %>
+                <td id="interview-result" class="interview-result" data-id="<%= student._id %>">
+                    <% for(result of student.interview_result){ %>
+                        <% if((result.interview.id.toString())==(interviews.id)){ %>
+                            <% console.log(result.interview._id.toString()+"**"+interviews.id);%>
+                    <button data-id="<%= student._id %>" data-interview="<%= interviews._id %>"><%= result.result %></button>
+                    <% break; %>
+                    <%}else{%>
+                    <button data-id="<%= student._id %>" data-interview="<%= interviews._id %>">
+                        None
+                    </button>
+
+                        <% } %>
+                        <% } %>
                 </td>
             </tr>
             <% } %>
                 </tr>
         
         </table>
+        </div>
     </body>
-    <script src="/js/students_in_interview.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="/js/students_in_interview.js"></script>
+        <script>
+        let elemList = $('.interview-result>button');
+            for (let e of elemList) {
+                new interviewResult(e);
+            }
+        </script>
 </html>
