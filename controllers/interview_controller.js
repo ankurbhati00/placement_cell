@@ -109,21 +109,21 @@ module.exports.interviewResult = async (req, res) => {
           });
         student.save();
 
-        return res.json('200', {
+        return res.status(200).json({
           data: result,
           message: 'request successful'
         });
       }
       //if student not found 
-      return res.json('404', {
-        message: 'Student not found in db'
+      return res.status(404).json({
+        message: "Student not found in db",
       });
     })
     .catch((err) => {
       console.log(err);
-      return res.json('500',{
-        message:'Internal Server Error'
-      })
+      return res.status(500).json({
+        message: "Internal Server Error",
+      });
     });
 }
 

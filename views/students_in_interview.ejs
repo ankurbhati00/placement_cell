@@ -5,13 +5,18 @@
     </head>
     <body>
         <div id="student-interview">
+           
         <table  border="3">
-            <tr>
-                <th colspan="3">Company: &nbsp;<%=interviews.company%></th>
-                <th>Result</th>
-            </tr>
+
+            <thead>
+                <tr>
+                    <th colspan="3">Company: &nbsp;<%=interviews.company%></th>
+                    <th>Result</th>
+                </tr>
+            
+            </thead>
         
-            <tr>
+            <tbody>
                 <% for(student of interviews.student){ %>
             <tr>
                 <td>
@@ -24,22 +29,24 @@
                     <%= student.email %>
                 </td>
                 <td id="interview-result" class="interview-result" data-id="<%= student._id %>">
+                    <% let result_found=false;%>
                     <% for(result of student.interview_result){ %>
-                        <% if((result.interview.id.toString())==(interviews.id)){ %>
-                            <% console.log(result.interview._id.toString()+"**"+interviews.id);%>
+                        <% if(interviews._id.equals(result.interview._id)){ %>
+                            <% result_found= true; %>
+                        <!-- if result  found in the databse show result value on button-->
                     <button data-id="<%= student._id %>" data-interview="<%= interviews._id %>"><%= result.result %></button>
                     <% break; %>
-                    <%}else{%>
-                    <button data-id="<%= student._id %>" data-interview="<%= interviews._id %>">
-                        None
-                    </button>
+                    <%}%>
 
                         <% } %>
-                        <% } %>
+                        <!-- if result not found in the databse show "None" on button-->
+                        <% if(!result_found){%>
+                    <button data-id="<%= student._id %>" data-interview="<%= interviews._id %>">  None</button>
+                      <%}%>
                 </td>
             </tr>
             <% } %>
-                </tr>
+                </tbody>
         
         </table>
         </div>

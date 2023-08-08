@@ -5,12 +5,9 @@
     background-color: rgb(199, 179, 141);
     border: 2px solid black;
     border-radius: 2px;
-    overflow-y: scroll;
 }
 
-#student-interview::-webkit-scrollbar {
-    display: none;
-}
+
 
 table {
     width: 1000px;
@@ -28,6 +25,7 @@ th {
 
 #interview-result{
     position: relative;
+    width: 150px;
 }
 
 #result-list{
@@ -59,4 +57,15 @@ th {
 #result-list a:hover{
     color: whitesmoke;
     background-color: black;
+}
+
+/* style for result button */
+
+#interview-result>button{
+    border:none;
+    width: 100%;
+    background-color: black;
+    color:whitesmoke;
+    font-weight: 700;
+    font-family: inherit;
 }

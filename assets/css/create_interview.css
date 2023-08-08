@@ -1,0 +1,62 @@
+table {
+    display: flex;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    background-color: rgb(134, 134, 179);
+}
+
+table tbody {
+    width: 100%;
+}
+
+
+table tr {
+    display: flex;
+    width: 100%;
+    padding: 4px 0px;
+}
+table td {
+    width: 50%;
+}
+
+.input-header {
+    font-size: 1.3rem;
+}
+
+input {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+}
+
+input:focus {
+    background-color: rgb(185, 207, 185);
+}
+
+#submit-button {
+    font-family: inherit;
+    width: 150px;
+    height: 30px;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-left: 38%;
+    background-color: rgb(204, 82, 82);
+    box-shadow: 2px 2px 4px rgb(57, 54, 54);
+}
+
+#submit-button:hover {
+    box-shadow: none;
+}
+.student-emails{
+    display: inline-block;
+    width: 100%;
+    padding: 0px;
+    font-size: 1.4rem;
+}
+.student-emails input{
+    width: 20px;
+    height: 20px;
+    border-radius: none;
+}

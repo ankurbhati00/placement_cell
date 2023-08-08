@@ -4,15 +4,29 @@
     </head>
     <body>
         <form action="/interview/create" method="post">
-            <div>Company: <input type="text" name="company" id="company" required></div>
-            <div>Date: <input type="date" name="date" id="date" required></div>
-            <strong id="select-students">Select students</strong>
-            <% for(student of students){ %>
-                <div><input type="checkbox" name="emails" id="checkbox" value="<%= student.email %>">
-                    <%= student.email %>
-                </div>
-                <% } %>
-                <input type="submit" value="Create Interview">
+            <table>
+                <tbody>
+                <tr>
+                    <td class="input-header">Company:</td>
+                    <td><input type="text" name="company" id="company" required></td>
+                </tr>
+                <tr>
+                    <td class="input-header">Date:</td>
+                    <td><input type="date" name="date" id="date" required></td>
+                </tr>
+                <tr>
+                   <td> <strong id="select-students">Select students</strong></td>
+                </tr>
+                <% for(student of students){ %>
+                    <tr><td class="student-emails"><input type="checkbox" name="emails" id="checkbox" value="<%= student.email %>">
+                        <%= student.email %>
+                        </td>
+                    </tr>
+                    <% } %>
+                    </tbody>
+            </table>
+            
+                <input type="submit" id="submit-button" value="Create Interview">
         </form>
     </body>
     <script src="/js/create_interview.js"></script>

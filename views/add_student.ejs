@@ -4,15 +4,42 @@
     </head>
     <body>
         <form action="/student/create" method="post">
-            <div>Name: <input type="text" name="name" id="name" required></div>
-            <div>Email: <input type="text" name="email" id="email" required></div>
-            <div>College: <input type="text" name="college" id="college" required></div>
-            <div>DSA Score: <input type="number" name="dsa_score" id=""></div>
-            <div>Web Dev Score: <input type="number" name="Webd_score" id=""></div>
-            <div>React Score: <input type="number" name="react_score" id=""></div>
-            <div>Placement Status: <input type="text" name="placement_status" id="" required></div>
-            
-            <input type="submit" value="Add Student">
+            <table>
+                <tr>
+                    <th>Enter student details..</th>
+                </tr>
+                <tr>
+                    <td class="input-header">Name:</td>
+                    <td><input type="text" name="name" id="name" required ></td>
+                </tr>
+            <tr>
+                <td class="input-header">Email: </td>
+                <td><input type="text" name="email" id="email" required></td>
+            </tr>
+            <tr>
+                <td class="input-header">College:</td>
+                <td><input type="text" name="college" id="college" required></td>
+            </tr>
+           <tr>
+            <td class="input-header">DSA Score:</td>
+            <td><input type="number" name="dsa_score" id=""></td>
+           </tr>
+            <tr>
+                <td class="input-header">Web Dev Score:</td>
+                <td><input type="number" name="Webd_score" id=""></td>
+            </tr>
+            <tr>
+                <td class="input-header">React Score:</td>
+                <td><input type="number" name="react_score" id=""></td>
+            </tr>
+            <tr>
+                <td class="input-header">Placement Status:</td>
+                <td><input type="radio" name="placement_status" class="radio-button" value="Placed" >Placed
+                <input type="radio" name="placement_status" class="radio-button" value="Not Placed">Not placed</td>
+
+            </tr>
+            </table>
+            <input type="submit" id="submit-button" value="Add Student">
         </form>
     </body>
     <script src="/js/add_student.js"></script>

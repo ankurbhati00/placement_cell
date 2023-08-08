@@ -6,11 +6,15 @@
         <div id="interviews-table">
 
         <table border="2">
-            <tr>
-                <th>No.</th>
-                <th>Company</th>
-                <th>Date</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Company</th>
+                    <th>Date</th>
+                </tr>
+
+            </thead>
+            <tbody>
             <% let size=1; %>
                 <% for(interview of interviews){ %>
                     <% let date=new Date(interview.date).toDateString(); %>
@@ -26,6 +30,7 @@
                             </td>
                         </tr>
                         <%}%>
+                        </tbody>
         </table>
         </div>
     </body>
