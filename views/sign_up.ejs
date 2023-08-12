@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://kit.fontawesome.com/51457f5ad9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/sign-up.css">
+</head>
+
+<body>
+    <div id="sign-up-form">
+        <h1>Sign Up</h1>
+        <form action="sign-up/auth" method="post">
+
+            <input type="text" name="name" id="name" placeholder="Enter your name" required><br>
+            <input type="email" name="email" id="email" required placeholder="Enter your email" required><br>
+            <input type="password" name="password" id="password" required placeholder="Enter password" required><br>
+            <input type="password" name="confirm_password" id="confirm-password" placeholder="Confirm password" required><br>
+            <input type="submit" value="sign up">
+        </form>
+        <h3 style="margin-left: 80px;" id="click-sign-up">Already have an account? click here <a href="/user/sign-in">Sign In</a></h3>
+
+        <!-- <hr>
+        <sup>or</sup>
+        <div id="google-auth-sign-up"><i class="fa-brands fa-google"></i><a href="">google</a></div> -->
+    </div>
+</body>
+
+</html>

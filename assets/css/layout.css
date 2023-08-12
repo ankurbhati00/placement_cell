@@ -17,11 +17,13 @@ header{
     font-size: 2rem;
 }
 
-#logout{
-    display: inline-block;
+#header-buttons {
+    display: flex;
     position: absolute;
     right:50px;
     top: 22px;
+}
+.header-buttons{
     height:20px;
     width: 70px;
     text-align: center;
@@ -34,7 +36,7 @@ header{
     box-shadow: 1px 1px 3px rgb(80, 73, 73);
     
 }
-#logout:hover{
+.header-buttons:hover{
     background-color: rgb(116, 128, 192);
     border:2px solid black;
     }

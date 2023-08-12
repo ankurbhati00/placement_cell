@@ -11,13 +11,8 @@ company:{
 date:{
     type:Date
 },
-result:{
-type:String,
-required:true
-},
-
 student:[{
-    type:mongoose.Schema.ObjectId,
+    type:mongoose.Schema.Types.ObjectId,
     ref:'Student'
 }]
 

@@ -11,7 +11,13 @@
 
     <header>
       <h2 id="header-text">Placement Cell</h2>
-        <a href="" id="logout">Log Out</a>
+      <div id="header-buttons">
+        <% if(locals.user){%>
+            <a href="/user/logout" class="header-buttons" >Log Out</a>
+            <%}else{%>
+        <a href="/user/sign-in" class="header-buttons" >LogIn</a>
+        <%}%>
+        </div>
     </header>
     <main>
 
@@ -20,6 +26,8 @@
             <a href="/interview"  class="dynamic-button" id="interviews">Interviews</a>
             <a href="/student/create"  class="dynamic-button" id="add-student">Add Student <i class="fa-sharp fa-regular fa-plus"></i></a>
             <a href="/interview/create"  class="dynamic-button" id="create-interview">Create Interview <i class="fa-sharp fa-regular fa-plus"></i></a>
+            <a href="/student/csv" class="dynamic-button" id="csv-btn">Download CSV <i class="fa-sharp fa-regular fa-plus"></i></a>
+            
         </div>
             <%- body %>
        
