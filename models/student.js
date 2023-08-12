@@ -35,10 +35,8 @@ const Student = new mongoose.Schema(
     interview_result: [
       {
         interview: {
-          type: String,
-          toJSON: () => {
-            return this._id.toString();
-          }
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Interview",
         },
         result: {
           type: String,
