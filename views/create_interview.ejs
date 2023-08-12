@@ -17,7 +17,7 @@
                 <tr>
                    <td> <strong id="select-students">Select students</strong></td>
                 </tr>
-                <% for(student of students){ %>
+                <% for(let student of students){ %>
                     <tr><td class="student-emails"><input type="checkbox" name="emails" id="checkbox" value="<%= student.email %>">
                         <%= student.email %>
                         </td>

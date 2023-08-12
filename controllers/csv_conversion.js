@@ -28,14 +28,14 @@ try {
       }
 
   });
-//     const opts = ['Name','Email','College','DSA Score','WebD Score','React Score','Placement Status','Interviews','interview results'];
-//     const parser = new csvParser({ opts });
-//     const csv = parser.parse(arrStudents);
-//   //   console.log(csv);
+    const opts = ['Name','Email','College','DSA Score','WebD Score','React Score','Placement Status','Interviews','interview results'];
+    const parser = new csvParser({ opts });
+    const csv = parser.parse(arrStudents);
+  //   console.log(csv);
     
-//     res.setHeader('Content-Type', 'text/csv');
-//     res.setHeader('Content-Disposition', 'attatchment: filename=userdata.csv');
-//     res.status(200).end(csv);
+    res.setHeader('Content-Type', 'text/csv');
+    res.setHeader('Content-Disposition', 'attatchment: filename=userdata.csv');
+    res.status(200).end(csv);
 } catch (err) {
   console.error(err);
 }
