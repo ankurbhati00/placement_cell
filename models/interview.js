@@ -1,22 +1,23 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Interview = new mongoose.Schema({
+  company: {
+    type: String,
+    required: true,
+  },
 
-company:{
-    type:String,
-    required:true,
-    unique:true
-},
-
-date:{
-    type:Date
-},
-student:[{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'Student'
-}]
-
-
+  date: {
+    type: Date,
+  },
+  remainingTime: {
+    type: String,
+  },
+  student: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Student",
+    },
+  ],
 });
 
-module.exports = mongoose.model('Interview', Interview);
+module.exports = mongoose.model("Interview", Interview);

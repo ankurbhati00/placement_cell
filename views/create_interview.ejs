@@ -12,10 +12,11 @@
                 </tr>
                 <tr>
                     <td class="input-header">Date:</td>
-                    <td><input type="date" name="date" id="date" required></td>
+                    <td><input type="datetime-local" name="date" id="date" required></td>
                 </tr>
+                
                 <tr>
-                   <td> <strong id="select-students">Select students</strong></td>
+                   <td id="select-students"> <strong >Select students</strong></td>
                 </tr>
                 <% for(let student of students){ %>
                     <tr><td class="student-emails"><input type="checkbox" name="emails" id="checkbox" value="<%= student.email %>">
@@ -26,7 +27,7 @@
                     </tbody>
             </table>
             
-                <input type="submit" id="submit-button" value="Create Interview">
+                <input type="submit" id="submit-button" value="Create">
         </form>
     </body>
     <script src="/js/create_interview.js"></script>

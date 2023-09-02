@@ -1,5 +1,6 @@
 <html>
     <head>
+        
         <link rel="stylesheet" href="/css/interviews_list.css">
     </head>
     <body>
@@ -10,14 +11,16 @@
                 <tr>
                     <th>No.</th>
                     <th>Company</th>
-                    <th>Date</th>
+                    <th>Date & time</th>
+                    <th>Remaining time</th>
+                    <th>Manage</th>
                 </tr>
 
             </thead>
             <tbody>
             <% let size=1; %>
                 <% for(let interview of interviews){ %>
-                    <% let date=new Date(interview.date).toDateString(); %>
+                    <% let date=interview.date.toString().substring(0, 21); %>
                         <tr>
                             <td>
                                 <%= size++ %>
@@ -25,8 +28,19 @@
                             <td><a href="/interview/students-list/<%=interview._id%>">
                                     <%= interview.company %>
                                 </a> </td>
-                            <td>
+                            <td class="date_time">
                                 <%= date %>
+                            </td>
+                            <td>
+                                <%= interview.remainingTime %>
+
+                            </td>
+                            <td class="manage">
+                                <div class="reschedule-form" id="reschedule-<%=interview._id %>"></div>
+                                <span class="reschedule"  >
+                                <a class="reschedule-btn"  data-id="reschedule-<%=interview._id %>" href="/interview/students-list/reschedule/<%=interview._id%>">Reschedule</a>
+                                </span>
+                                <span class="delete"><a class="delete-btn" href="/interview/students-list/delete/<%=interview._id%>">Delete</a></span>
                             </td>
                         </tr>
                         <%}%>
@@ -35,6 +49,15 @@
         </div>
     </body>
     <script src="/js/interviews_list.js"></script>
+    <script>
+        let elmList = $('.reschedule-btn');
+        for(let e of elmList){
+            console.log(e);
+            new InterviewsList(e);
+
+        }
+    </script>
+   
 </html>
 
 

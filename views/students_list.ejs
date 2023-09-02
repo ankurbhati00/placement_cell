@@ -48,14 +48,22 @@
                     <td>
                         <%= student.react_score %>
                     </td>
-                    <td>
-                        <%= student.placement_status %>
+                    <td >
+                        <div class="placement-status" data-id="change-status-<%=student._id %>" > <%= student.placement_status %></div>
+                        <div class="change-status" id="change-status-<%=student._id %>"></div>
                     </td>
                 </tr>
                 <% } %>
         </tbody>
     </table>
     </div>
+    <script src="/js/students_list.js"></script>
+    <script>
+let studentsArr =$('.placement-status');
+for(let elm of studentsArr){
+    new Students(elm);
+}
+    </script>
 </body>
 
 </html>

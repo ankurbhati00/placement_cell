@@ -8,4 +8,7 @@ router.post('/create', interviewController.createInterview);  //to create the in
 router.get("/create", passport.checkAuthentication, interviewController.createInterviewPage);
 router.get('/students-list/:id',passport.checkAuthentication, interviewController.studentsInIntervew);
 router.post('/students-list/interview-result/:student_id', interviewController.interviewResult);
+router.get('/students-list/delete/:interview_id',passport.checkAuthentication, interviewController.deleteInterview);
+router.post("/students-list/reschedule/:interview_id",passport.checkAuthentication, interviewController.reschedule);
+
 module.exports = router;

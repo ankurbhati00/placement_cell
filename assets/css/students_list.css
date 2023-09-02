@@ -2,7 +2,7 @@
     display: inline-block;
     height: 600px;
     width: fit-content;
-    background-color: rgb(199, 179, 141);
+    background-color: whitesmoke;
     border: 2px solid black;
     border-radius: 2px;
 }
@@ -17,5 +17,34 @@ table{
 }
 
 th, .th{
-    background-color: rgb(98, 178, 98);
+    background-color: rgb(195, 184, 184);
+}
+.placement-status{
+    cursor: pointer;
+    background-color: black;
+    color: white;    
+}
+
+.placement-status:hover{
+    color:orange;
+}
+
+td{
+    position: relative;
+}
+.change-status>form{
+display: inline-block;
+position: absolute;
+height:70px;
+width: 100px;
+background-color:rgb(195, 184, 184) ;
+padding:5px;
+border-radius: 5px;
+left:140px;
+}
+
+.change-status>form button{
+    margin-left: 25px;
+    margin-top: 5px;
+    width: 50px;
 }

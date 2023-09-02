@@ -4,7 +4,7 @@ table{
     border: 1px solid black;
     border-radius: 5px;
     font-size: 1.2rem;
-    background-color: rgb(134, 134, 179);
+    background-color: rgb(216, 216, 222);
 }
 table tbody{
     width: 100%;
@@ -41,8 +41,10 @@ input:focus{
     font-size: 1.3rem;
     margin-top: 20px;
     margin-left: 38%;
-    background-color: rgb(204, 82, 82);
-    box-shadow: 2px 2px 4px rgb(57, 54, 54);
+    background-color: crimson;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 #submit-button:hover{

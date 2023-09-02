@@ -2,7 +2,7 @@
     display: inline-block;
     height: 600px;
     width: fit-content;
-    background-color: rgb(199, 179, 141);
+    background-color: whitesmoke;
     border: 2px solid black;
     border-radius: 2px;
 }
@@ -17,7 +17,7 @@ table {
 }
 
 th {
-    background-color: rgb(98, 178, 98);
+        background-color: rgb(195, 184, 184);
 }
 
 
